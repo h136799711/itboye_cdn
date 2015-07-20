@@ -1,0 +1,22 @@
+.dragsort li {
+    margin-bottom: 5px;
+    padding: 0 6px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #eee;
+    background-color: #fff;
+    overflow: hidden;
+}
+.dragsort li b {
+    display: none;
+    float: right;
+    padding: 0 6px;
+    font-weight: bold;
+    color: #000;
+}
+.dragsort li em {
+    font-style: normal;
+}
+.dragsort li:hover b {
+    display: block;
+}
