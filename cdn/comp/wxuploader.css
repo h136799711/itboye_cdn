@@ -56,7 +56,8 @@
 	text-overflow: ellipsis;
 	overflow: hidden;
 	padding: 5px; 
-	 height: 30px;
+	height: 30px;
+    font-size:10px;
 }
 .wxuploaderimg{
 	width: 100%;
