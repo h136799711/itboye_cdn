@@ -1,2 +1,2 @@
 # itboye_cdn
-itboye_cdn_js css
+第三方静态js\CSS库。
