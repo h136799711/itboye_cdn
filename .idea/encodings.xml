@@ -3,6 +3,8 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/cdn/jquery-addcart-fly/jquery.fly.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cdn/jquery-addcart-fly/jquery.fly.min.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cdn/jquery-qrcode/v1.0/README.md" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cdn/jquery-qrcode/v1.0/jquery.qrcode.min.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cdn/select2/4.0.0/css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cdn/select2/4.0.0/js" charset="UTF-8" />
   </component>
