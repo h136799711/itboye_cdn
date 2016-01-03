@@ -62,18 +62,29 @@ window.console = window.console || (function(){
 						},1400);
 				}).done(function(data) {
 					if (data.status == 1) {
-						if (data.url) {
-							$.scojs_message(data.info + ' 页面即将自动跳转~', $.scojs_message.TYPE_OK);
-						} else {
-							$.scojs_message(data.info, $.scojs_message.TYPE_OK);
-						}
-						setTimeout(function() {
-							if (data.url) {
-								location.href = data.url;
-							} else if ($(that).hasClass('no-refresh')) {} else {
-								location.reload();
-							}
-						}, 1500);
+
+                        if(!$(that).data('no-alert')) {
+                            if (data.url) {
+                                $.scojs_message(data.info + ' 页面即将自动跳转~', $.scojs_message.TYPE_OK);
+                            } else {
+                                $.scojs_message(data.info, $.scojs_message.TYPE_OK);
+                            }
+                            setTimeout(function () {
+                                if (data.url) {
+                                    location.href = data.url;
+                                } else if ($(that).hasClass('no-refresh')) {
+                                } else {
+                                    location.reload();
+                                }
+                            }, 1500);
+                        }else{
+                                if (data.url) {
+                                    location.href = data.url;
+                                } else if ($(that).hasClass('no-refresh')) {
+                                } else {
+                                    location.reload();
+                                }
+                        }
 					} else {
 
 						$.scojs_message(data.info, $.scojs_message.TYPE_OK);
