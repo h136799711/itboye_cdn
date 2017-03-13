@@ -1,8 +1,8 @@
-window.console = window.console || (function(){  
-    var c = {}; c.log = c.warn = c.debug = c.info = c.error = c.time = c.dir = c.profile  
-    = c.clear = c.exception = c.trace = c.assert = function(){};  
-    return c;  
-})();  
+window.console = window.console || (function(){
+    var c = {}; c.log = c.warn = c.debug = c.info = c.error = c.time = c.dir = c.profile
+    = c.clear = c.exception = c.trace = c.assert = function(){};
+    return c;
+})();
 (function($, w) {
 
 	function redirectTo(url) {
@@ -39,12 +39,12 @@ window.console = window.console || (function(){
 			de.webkitCancelFullScreen();
 		}
 	}
-	
+
 	function selectall(that,sel){
 		if($(that).prop('checked')){
 			$(sel).prop('checked',true);
 		}else{
-			$(sel).prop('checked',false);			
+			$(sel).prop('checked',false);
 		}
 	}
 
@@ -102,8 +102,8 @@ window.console = window.console || (function(){
 	$(window).load(function() {
 		NProgress.done();
 	})
-	
-	
+
+
 	$(function() {
 			NProgress.start();
 			//nprogress
@@ -129,9 +129,9 @@ window.console = window.console || (function(){
 					ev.preventDefault();
 					return false;
 				}
-				
+
 			});
-			
+
 			$(".dropdown-toggle.avatar").hover(function() {
 				$(".dropdown-toggle.avatar").dropdown("toggle");
 			}).next(".dropdown-menu").hover(function() {
@@ -156,7 +156,7 @@ window.console = window.console || (function(){
 					$(".admin-main-content").outerWidth(width);
 				}
 			});
-			
+
 			//一般是select 框
 			$(".sle_ajax_post").change(function(ev){
 				var item = $(ev.target);
@@ -173,14 +173,14 @@ window.console = window.console || (function(){
 				}else{
 					sleajaxpost(query, item);
 				}
-				
+
 			})
-				
+
 			function sleajaxpost (query, that){
-				
+
 				var target = that.attr("data-href");
 				$.post(target, query).always(function() {
-					
+
 				}).done(function(data) {
 					if (data.status == 1) {
 						if (data.url) {
@@ -209,22 +209,22 @@ window.console = window.console || (function(){
 
 			//ajax get请求
 			$('.ajax-get').click(function(ev) {
-				
+
 				ev.preventDefault();
 				var target;
 				var that = this;
-			
-				if ((target = $(this).attr('href')) || (target = $(this).attr('url'))) {
-					
-					if ($(this).hasClass('confirm')) {
 
-						var conf = $.scojs_confirm({
-							content: '确认要执行该操作吗?',
-							action: function() {
-								ajaxget(that, target);
-							}
-						});
-						conf.show();
+				if ((target = $(this).attr('href')) || (target = $(this).attr('url'))) {
+
+					if ($(this).hasClass('confirm')) {
+                        var conf = $.scojs_confirm({
+                            content: '确认要执行该操作吗?',
+                            action : function() {
+                                ajaxget(this, target);
+                            }
+                        });
+                        conf.show();
+                        conf.options.action.apply(that);
 					}else{
 						ajaxget(that, target);
 					}
@@ -240,7 +240,7 @@ window.console = window.console || (function(){
 						},1400);
 					}).success(function(data) {
 						if (data.status == 1) {
-							if (data.url) {								
+							if (data.url) {
 								$.scojs_message(data.info + ' 页面即将自动跳转~', $.scojs_message.TYPE_OK);
 							} else {
 								$.scojs_message(data.info, $.scojs_message.TYPE_OK);
@@ -307,12 +307,12 @@ window.console = window.console || (function(){
 					} else {
 
 						query = form.find('input,select,textarea').serialize();
-						
+
 					}
 
 
 				}
-				
+
 				if ($(this).hasClass('confirm')) {
 					$(this).scojs_confirm({
 						content: '确认要执行该操作吗',
@@ -325,11 +325,11 @@ window.console = window.console || (function(){
 				}
 				return false;
 			}); //END ajax-post
-			
+
 
 			$(window).resize();
 		}) //end $.ready
-		
+
 		$(function () {
 		  $('[data-toggle="tooltip"]').tooltip();
 		  $('[data-toggle="popover"]').popover();
