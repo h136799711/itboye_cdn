@@ -94,6 +94,7 @@
         }
 
         ,close: function() {
+            if(!this.$modal){ return ;}
             this.$modal.hide().off('.' + pluginName).find('.inner').html('');
             if (this.options.cssclass !== undefined) {
                 this.$modal.removeClass(this.options.cssclass);

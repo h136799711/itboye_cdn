@@ -5,7 +5,7 @@
       <paths name="cdn">
         <serverdata>
           <mappings>
-            <mapping deploy="/alidata/itboye.com/cdn" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/alidata/itboye.com/" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
