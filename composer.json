@@ -1,0 +1,14 @@
+{
+    "name": "hebidu/cdn",
+    "description": "static js lib",
+    "type": "library",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "hebidu",
+            "email": "hebiduhebi@126.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
