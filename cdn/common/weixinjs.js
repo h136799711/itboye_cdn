@@ -70,6 +70,22 @@ function wxerror(res) {
 
 wx.ready(function() {
 	wxready();
+    //时差设置
+    if(window.itboye && !window.itboye.setCookies){
+        window.itboye.setCookies = function(name,value,days)
+        {
+            var exp = new Date();
+            exp.setTime(exp.getTime() + days*24*60*60*1000);
+            document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
+        }
+    }
+    if(window.itboye && window.itboye.setCookies){
+        //设置时区
+        var timezone = (0-((new Date()).getTimezoneOffset()) / 60);
+        window.itboye.setCookies('timezone',timezone,180);
+        console.log("时差",timezone,'小时');
+
+    }
 })
 wx.error(function(res) {
 	wxerror(res);
