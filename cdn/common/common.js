@@ -111,6 +111,7 @@ window.console = window.console || (function(){
         NProgress.start();
 
         //时差设置
+        window.itboye = window.itboye || {};
         if(window.itboye && !window.itboye.setCookies){
             window.itboye.setCookies = function(name,value,days)
             {
