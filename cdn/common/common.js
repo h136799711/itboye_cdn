@@ -261,16 +261,17 @@ window.console = window.console || (function(){
                     $(that).button("reset");
                 },1400);
             }).success(function(data) {
-                if (data.status == 1) {
+                if (data.status === 1) {
                     if (data.url) {
                         $.scojs_message(data.info + ' 页面即将自动跳转~', $.scojs_message.TYPE_OK);
                     } else {
                         $.scojs_message(data.info, $.scojs_message.TYPE_OK);
                     }
                     setTimeout(function() {
-                        if (data.url) {
+                        if ($(that).hasClass('no-refresh')){
+
+                        } else if (data.url) {
                             location.href = data.url;
-                        } else if ($(that).hasClass('no-refresh')) {
                         } else {
                             location.reload();
                         }
